@@ -82,6 +82,16 @@ static int callback(void *NotUsed, int argc, char **argv, char**azColName){
 	return 0;
 }
 
+static int recup_sqlite(void *NotUsed, int argc, char **argv, char**azColName){
+	int i;
+	for(i=0; i<argc; i++)
+	{
+		cout << azColName[i]<<" = "<<(argv[i] ? argv[i] : "NULL") << "\n";
+	}
+	cout << endl;
+	return 0;
+}
+
 void init(){
 	/* INIT VARS BASE */
 	string VERSION = "0.1.0a";
@@ -91,6 +101,7 @@ void init(){
 	cout << "\nCurrent path: " << nom_dossier << endl;
 	list<string> fichiers;
 	fichiers = get_files_names(nom_dossier);
+	string REQ;
 	
 	unsigned int Hip = hash(nom_dossier.c_str());
 	stringstream Hop;
@@ -99,7 +110,7 @@ void init(){
 	cout << "PROJECT:[" << tmp_str << "]" << endl;
 	
 	/* SQLITE3 INIT */
-	sqlite3 *db;
+	/*sqlite3 *db;
 	char *zErrMsg = 0;
 	int rc;
 	string dbname = tmp_str+".db";
@@ -109,9 +120,9 @@ void init(){
 		sqlite3_close(db);
 	}
 	
-	string REQ = "CREATE TABLE FICHIERS(ID INT PRIMARY KEY NOT NULL, HASH TEXT NOT NULL, BASE BLOB NOT NULL);";
+	REQ = "CREATE TABLE FICHIERS(ID INT PRIMARY KEY NOT NULL, HASH TEXT NOT NULL, BASE BLOB NOT NULL)";
 	rc = sqlite3_exec(db, REQ.c_str(), callback, 0, &zErrMsg);
-
+	*/
 
 
 	/* REST OF CODE - INIT DictX */
@@ -128,17 +139,22 @@ void init(){
 			DX.insert_from("objects", "version", VERSION);
 			DX.insert_from("objects", "comment", COMMENT);
 			
-			//SQLITE3
 			string DATA = get_data_from_file(strval.c_str());
 			string B64 = base64_encode((unsigned char*)DATA.c_str(),strlen(DATA.c_str()));
-			string REQ = "INSERT INTO FICHIERS (HASH,BASE) VALUES("+HASH+","+B64+");";
-			rc = sqlite3_exec(db, REQ.c_str(),callback, 0, &zErrMsg);
+			DX.insert_from("objects", "data", B64);
+	
+			//SQLITE3
+			//string DATA = get_data_from_file(strval.c_str());
+			//string B64 = base64_encode((unsigned char*)DATA.c_str(),strlen(DATA.c_str()));
+			//string REQ = "INSERT INTO FICHIERS (HASH,BASE) VALUES("+HASH+","+B64+")";
+			//rc = sqlite3_exec(db, REQ.c_str(),callback, 0, &zErrMsg);
 		}
 		if (is_dir(strval.c_str())){
 			cout << "Directory(igniored by default): " << strval.c_str() << endl;
 		}
 	}
-	sqlite3_close(db);
+
+	//sqlite3_close(db);
 	DX.save_database(tmp_str+".dictx");
 }
 

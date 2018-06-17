@@ -190,24 +190,24 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>F1AD91C720D65BC7002DD83A</string>
+				<string>F1AD921E20D67823002DD83A</string>
 				<key>PBXProjectModuleLabel</key>
-				<string>main.cpp</string>
+				<string>dictx.cpp</string>
 				<key>PBXSplitModuleInNavigatorKey</key>
 				<dict>
 					<key>Split0</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
-						<string>F1AD91C820D65BC7002DD83A</string>
+						<string>F1AD921F20D67823002DD83A</string>
 						<key>PBXProjectModuleLabel</key>
-						<string>main.cpp</string>
+						<string>dictx.cpp</string>
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>F1AD91CA20D65BC7002DD83A</string>
+						<string>F1AD922020D67823002DD83A</string>
 						<key>history</key>
 						<array>
-							<string>F1AD91C920D65BC7002DD83A</string>
+							<string>F1AD921A20D677D7002DD83A</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -223,7 +223,7 @@
 				<key>PBXModuleWindowStatusBarHidden2</key>
 				<false/>
 				<key>RubberWindowFrame</key>
-				<string>44 105 748 473 0 0 800 578 </string>
+				<string>15 100 748 473 0 0 800 578 </string>
 			</dict>
 		</dict>
 		<dict>
@@ -244,10 +244,10 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>F1AD91CE20D65BC7002DD83A</string>
+						<string>F1AD922220D67823002DD83A</string>
 						<key>history</key>
 						<array>
-							<string>F1AD91CD20D65BC7002DD83A</string>
+							<string>F1AD922120D67823002DD83A</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -270,24 +270,24 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>F1AD91CF20D65BC7002DD83A</string>
+				<string>F1AD91C720D65BC7002DD83A</string>
 				<key>PBXProjectModuleLabel</key>
-				<string>dictx.cpp</string>
+				<string>main.cpp</string>
 				<key>PBXSplitModuleInNavigatorKey</key>
 				<dict>
 					<key>Split0</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
-						<string>F1AD91D020D65BC7002DD83A</string>
+						<string>F1AD91C820D65BC7002DD83A</string>
 						<key>PBXProjectModuleLabel</key>
-						<string>dictx.cpp</string>
+						<string>main.cpp</string>
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>F1AD91D120D65BC7002DD83A</string>
+						<string>F1AD922320D67823002DD83A</string>
 						<key>history</key>
 						<array>
-							<string>F1AD917F20D64CC5002DD83A</string>
+							<string>F1AD921420D6772C002DD83A</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -303,7 +303,7 @@
 				<key>PBXModuleWindowStatusBarHidden2</key>
 				<false/>
 				<key>RubberWindowFrame</key>
-				<string>15 100 748 473 0 0 800 578 </string>
+				<string>44 105 748 473 0 0 800 578 </string>
 			</dict>
 		</dict>
 	</array>
@@ -625,12 +625,12 @@
 	<array>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>F1AD91C220D65B77002DD83A</string>
-		<string>1C0AD2B3069F1EA900FABCE6</string>
 		<string>F1C02A0F20D4FF1900D0DB95</string>
-		<string>F1AD91CF20D65BC7002DD83A</string>
+		<string>F1AD91C720D65BC7002DD83A</string>
 		<string>F1AD91CB20D65BC7002DD83A</string>
 		<string>/Users/cyril/icv/icv.xcodeproj</string>
-		<string>F1AD91C720D65BC7002DD83A</string>
+		<string>F1AD921E20D67823002DD83A</string>
+		<string>1C0AD2B3069F1EA900FABCE6</string>
 	</array>
 	<key>WindowString</key>
 	<string>29 162 690 397 0 0 800 578 </string>
@@ -654,7 +654,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>base64.h</string>
+								<string>main.cpp</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -723,7 +723,7 @@
 			<key>WindowToolGUID</key>
 			<string>F1C02A0F20D4FF1900D0DB95</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
@@ -1087,7 +1087,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C0AD2B3069F1EA900FABCE6</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>Identifier</key>

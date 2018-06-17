@@ -15,7 +15,7 @@
 using namespace std;
 
 //LeftSelect
-void LRstr(char input_dict[],int distanceL,char x_in[10000],int distanceR,char y_out[10000])
+void LRstr(char input_dict[],int distanceL,char x_in[100000],int distanceR,char y_out[100000])
 {
 	long LEN_IN = strlen(input_dict);
 	long Z = 0;
@@ -32,7 +32,7 @@ void LRstr(char input_dict[],int distanceL,char x_in[10000],int distanceR,char y
 	for (i = Z ; i > Z-distanceR ; i--)
 	{
 		char caractere = x_in[i-1];
-		printf("CARACTERE: %c\n",caractere);
+		//printf("CARACTERE: %c\n",caractere);
 		z_out[Zp] = caractere;
 		Zp++;	
 	}
@@ -41,7 +41,7 @@ void LRstr(char input_dict[],int distanceL,char x_in[10000],int distanceR,char y
 	{
 		if (z_out!=0)
 		{
-			printf("z=%c\n",z_out[i]);
+			//printf("z=%c\n",z_out[i]);
 			y_out[i] = z_out[(Z-2) - 1 - i];
 		}
 	}
@@ -100,7 +100,7 @@ class Table
 	map <int, map<string, string> > mapData;
 	int ID;
 	void insert(int id_cur, string cle, string value){
-		cout << "INSERT: ID(" << id_cur << ") KEY(" << cle << ") VALUE(" << value << ")" <<endl;
+		//cout << "INSERT: ID(" << id_cur << ") KEY(" << cle << ") VALUE(" << value << ")" <<endl;
 		mapData[id_cur][cle] = value;
 		ID = id_cur;
 	}	
@@ -112,7 +112,7 @@ class Table
 	//}
 	
 	void delete_from_id(int id){
-		cout << "ERASE FROM ID: " << id << endl;
+		//cout << "ERASE FROM ID: " << id << endl;
 		mapData.erase(id);
 	}
 		
@@ -173,7 +173,7 @@ void DictX::create_table(const string table_name){
 	while (j<512)
 	{
 		if (TABLE[j].name==""){
-			cout << "\nCREATE TABLE: "<< table_name <<endl;
+			//cout << "\nCREATE TABLE: "<< table_name <<endl;
 			TABLE[j].name = table_name;
 			break;
 		}
@@ -189,7 +189,7 @@ void DictX::update(const int ID, const string table_name, string key,string valu
 	{
 		if (TABLE[j].name==table_name){
 			//UPDATE CODE
-			cout << "UPDATE FOR ID(" << ID << ") KEY(" << key << ") VALUE(" << value <<")" << endl;
+			//cout << "UPDATE FOR ID(" << ID << ") KEY(" << key << ") VALUE(" << value <<")" << endl;
 			TABLE[j].update(ID, key, value);
 		}
 		j++;
@@ -291,8 +291,8 @@ void DictX::insert_from_by_id(string table_name, string key, string value, int i
 
 
 void DictX::load_database(string namefile){
-	char input_dict[10000];
-	char input_dict2[10000];
+	char input_dict[100000];
+	char input_dict2[100000];
 	string line;
 	char nom_fichier[512];
 	if (getcwd(nom_fichier, sizeof(nom_fichier)) == NULL){
