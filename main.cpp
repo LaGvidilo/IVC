@@ -20,6 +20,7 @@ Made with an iMac G3 500mhz and with 256Mb of RAM
 #include "sqlite3.h"
 #include "md5.h"
 #include "base64.h"
+//#include <curl/curl.h>
 
 using namespace std;
 DictX DX;
@@ -108,7 +109,7 @@ void init(){
 	Hop << Hip;
 	string tmp_str = Hop.str();
 	cout << "PROJECT:[" << tmp_str << "]" << endl;
-	
+	DX.load_database(tmp_str+".dictx");
 	/* SQLITE3 INIT */
 	/*sqlite3 *db;
 	char *zErrMsg = 0;
@@ -126,22 +127,22 @@ void init(){
 
 
 	/* REST OF CODE - INIT DictX */
-	DX.create_table("objects");
+	DX.create_table(VERSION);
 	for (list<string>::iterator it=fichiers.begin(); it!=fichiers.end(); ++it){
 		string strval = *it;
+		if (strval != nom_dossier + tmp_str + ".dictx"){
 		if (is_file(strval.c_str())){
 			cout << "...(+)File: " << strval.c_str() << endl;
 			
 			//DictX
-			DX.insert_from_new("objects", "file", strval);
+			DX.insert_from_new(VERSION, "file", strval);
 			string HASH = md5(get_data_from_file(strval.c_str()));
-			DX.insert_from("objects", "md5", HASH);
-			DX.insert_from("objects", "version", VERSION);
-			DX.insert_from("objects", "comment", COMMENT);
+			DX.insert_from(VERSION, "md5", HASH);
+			DX.insert_from(VERSION, "comment", COMMENT);
 			
 			string DATA = get_data_from_file(strval.c_str());
 			string B64 = base64_encode((unsigned char*)DATA.c_str(),strlen(DATA.c_str()));
-			DX.insert_from("objects", "data", B64);
+			DX.insert_from(VERSION, "data", B64);
 	
 			//SQLITE3
 			//string DATA = get_data_from_file(strval.c_str());
@@ -152,18 +153,86 @@ void init(){
 		if (is_dir(strval.c_str())){
 			cout << "Directory(igniored by default): " << strval.c_str() << endl;
 		}
+		}
 	}
 
 	//sqlite3_close(db);
 	DX.save_database(tmp_str+".dictx");
 }
 
-int main (int argc, char * const argv[]) {
+void add_all(string const VERSION, string COMMENT){
+	/* INIT VARS BASE */
+	string nom_dossier;
+	nom_dossier = get_current_path();
+	cout << "\nCurrent path: " << nom_dossier << endl;
+	list<string> fichiers;
+	fichiers = get_files_names(nom_dossier);
+	string REQ;
 	
+	unsigned int Hip = hash(nom_dossier.c_str());
+	stringstream Hop;
+	Hop << Hip;
+	string tmp_str = Hop.str();
+	cout << "PROJECT:[" << tmp_str << "]" << endl;
+	DX.load_database(tmp_str+".dictx");
+	DX.create_table(VERSION);
+	map <int, string> SEA;
+	bool ISNOTIN;
+	/* REST OF CODE - INIT DictX */
+	for (list<string>::iterator it=fichiers.begin(); it!=fichiers.end(); ++it){
+		string strval = *it;
+		if (strval != nom_dossier + tmp_str + ".dictx"){
+			if (is_file(strval.c_str())){
+			
+				SEA = DX.search(VERSION,(string)"file");
+				//cout << "VERIFY EXIST: "<< strval.c_str() << endl;
+				ISNOTIN = true;
+				for (map<int,string>::iterator it = SEA.begin(); it != SEA.end(); ++it){
+					//cout << "#" << it->second.c_str() <<endl;
+					if (it->second == strval){
+						//cout << "IS EXIST" << endl;
+						ISNOTIN = false;
+					}
+				}
+			
+				if (ISNOTIN==true){
+					cout << "...(+)File: " << strval.c_str() << endl;
+					//DictX
+					DX.insert_from_new(VERSION, "file", strval);
+					string HASH = md5(get_data_from_file(strval.c_str()));
+					DX.insert_from(VERSION, "md5", HASH);
+					DX.insert_from(VERSION, "comment", COMMENT);
+					string DATA = get_data_from_file(strval.c_str());
+					string B64 = base64_encode((unsigned char*)DATA.c_str(),strlen(DATA.c_str()));
+					DX.insert_from(VERSION, "data", B64);
+				}
+			
+	
+			//SQLITE3
+			//string DATA = get_data_from_file(strval.c_str());
+			//string B64 = base64_encode((unsigned char*)DATA.c_str(),strlen(DATA.c_str()));
+			//string REQ = "INSERT INTO FICHIERS (HASH,BASE) VALUES("+HASH+","+B64+")";
+			//rc = sqlite3_exec(db, REQ.c_str(),callback, 0, &zErrMsg);
+			}
+			if (is_dir(strval.c_str())){
+				cout << "Directory(igniored by default): " << strval.c_str() << endl;
+			}
+		}
+	}
+
+	//sqlite3_close(db);
+	DX.save_database(tmp_str+".dictx");
+}
+
+
+
+int main (int argc, char * const argv[]) {
+	///init();
 	//sqlite3 *db;
 	//int rc;
 	//rc = sqlite3_open("test.db", &db);
-
+	//init();
+	//add_all("toncul","toutsimplement");
 	if (argc == 1){
 		cout << "Usage: icv <command>" << endl << "For see more, type: icv help" << endl;
 		return 1;
@@ -175,7 +244,7 @@ int main (int argc, char * const argv[]) {
 			cout << "Command:" << endl;
 			cout << "init -- Init the project directory" << endl;
 			cout << "igniore <filename> -- Igniore a file" << endl;
-			cout << "commit <version> <comment> -- Save the version" << endl;
+			cout << "add all <version> <comment> -- Save the version" << endl;
 			cout << "reload <version> -- fetch previous version" << endl;
 			cout << "revert -- cancel changes" << endl;
 			return 1;
@@ -184,6 +253,20 @@ int main (int argc, char * const argv[]) {
 			init();
 		}
 	}
+	//cout << argc << " : " << argv << endl;	
+	if (argc == 5){
+		if (string(argv[1]) == "add"){
+			if (string(argv[2]) == "all"){
+				add_all(argv[3],argv[4]);			
+			}
+		}
+	}
+	/*if (argc > 3){
+		if (string(argv[1]) == "add"){
+			add_precise();
+		}
+	}*/
+	
 	
     return 0;
 }

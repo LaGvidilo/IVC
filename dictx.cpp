@@ -32,7 +32,7 @@ void LRstr(char input_dict[],int distanceL,char x_in[100000],int distanceR,char 
 	for (i = Z ; i > Z-distanceR ; i--)
 	{
 		char caractere = x_in[i-1];
-		//printf("CARACTERE: %c\n",caractere);
+		printf("CARACTERE: %c\n",caractere);
 		z_out[Zp] = caractere;
 		Zp++;	
 	}
@@ -41,7 +41,7 @@ void LRstr(char input_dict[],int distanceL,char x_in[100000],int distanceR,char 
 	{
 		if (z_out!=0)
 		{
-			//printf("z=%c\n",z_out[i]);
+			printf("z=%c\n",z_out[i]);
 			y_out[i] = z_out[(Z-2) - 1 - i];
 		}
 	}
@@ -100,7 +100,7 @@ class Table
 	map <int, map<string, string> > mapData;
 	int ID;
 	void insert(int id_cur, string cle, string value){
-		//cout << "INSERT: ID(" << id_cur << ") KEY(" << cle << ") VALUE(" << value << ")" <<endl;
+		cout << "INSERT: ID(" << id_cur << ") KEY(" << cle << ") VALUE(" << value << ")" <<endl;
 		mapData[id_cur][cle] = value;
 		ID = id_cur;
 	}	
@@ -112,7 +112,7 @@ class Table
 	//}
 	
 	void delete_from_id(int id){
-		//cout << "ERASE FROM ID: " << id << endl;
+		cout << "ERASE FROM ID: " << id << endl;
 		mapData.erase(id);
 	}
 		
@@ -172,8 +172,12 @@ void DictX::create_table(const string table_name){
 	map <int, string> outtab;
 	while (j<512)
 	{
-		if (TABLE[j].name==""){
-			//cout << "\nCREATE TABLE: "<< table_name <<endl;
+		bool NOMORE = true;
+		for (int i=0; i<512; i++){
+			if (TABLE[i].name == table_name){NOMORE=false;} 
+		}
+		if (TABLE[j].name=="" && NOMORE){
+			cout << "\nCREATE TABLE: "<< table_name <<endl;
 			TABLE[j].name = table_name;
 			break;
 		}
@@ -189,7 +193,7 @@ void DictX::update(const int ID, const string table_name, string key,string valu
 	{
 		if (TABLE[j].name==table_name){
 			//UPDATE CODE
-			//cout << "UPDATE FOR ID(" << ID << ") KEY(" << key << ") VALUE(" << value <<")" << endl;
+			cout << "UPDATE FOR ID(" << ID << ") KEY(" << key << ") VALUE(" << value <<")" << endl;
 			TABLE[j].update(ID, key, value);
 		}
 		j++;
