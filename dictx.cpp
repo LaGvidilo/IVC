@@ -32,7 +32,7 @@ void LRstr(char input_dict[],int distanceL,char x_in[100000],int distanceR,char 
 	for (i = Z ; i > Z-distanceR ; i--)
 	{
 		char caractere = x_in[i-1];
-		printf("CARACTERE: %c\n",caractere);
+		//printf("CARACTERE: %c\n",caractere);
 		z_out[Zp] = caractere;
 		Zp++;	
 	}
@@ -41,7 +41,7 @@ void LRstr(char input_dict[],int distanceL,char x_in[100000],int distanceR,char 
 	{
 		if (z_out!=0)
 		{
-			printf("z=%c\n",z_out[i]);
+			//printf("z=%c\n",z_out[i]);
 			y_out[i] = z_out[(Z-2) - 1 - i];
 		}
 	}
@@ -337,7 +337,7 @@ void DictX::load_database(string namefile){
 		if (strlen(input_dict)==4){break;}
 		//printf("DELIM: %s\n", strtok(input_dict,"$"));
 		TABLE[j].set_name(strtok(input_dict,"$"));
-		cout << "\nNAME OF TABLE CREATED: " << TABLE[j].name << endl;
+		//cout << "\nNAME OF TABLE CREATED: " << TABLE[j].name << endl;
 		decoupe(input_dict,input_dict2,lentmp);
 		//printf("AFTER DECOUPE: %s\n\n", input_dict);
 	
@@ -357,8 +357,8 @@ void DictX::load_database(string namefile){
 		
 			if (key!="") {
 				TABLE[j].insert(id_code,key,value);
-				cout << "---+KEY: " << key << endl;
-				cout << "---+VALUE: " << value << endl;
+				//cout << "---+KEY: " << key << endl;
+				//cout << "---+VALUE: " << value << endl;
 				
 			}
 			

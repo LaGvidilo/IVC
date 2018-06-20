@@ -2,6 +2,7 @@
 icv: informabox control version
 By Rick Sanchez in 2018
 Made with an iMac G3 500mhz and with 256Mb of RAM
+Version 1.0.1
 */
 
 #include <iostream>
@@ -72,7 +73,7 @@ string get_data_from_file(string namefile){
 	string input_dict;
 	if (fichier.is_open()){
 		while (getline(fichier,line)){
-			input_dict = input_dict + line;				
+			input_dict = input_dict + line + "\n";				
 		}
 		fichier.close();
 	}
@@ -143,6 +144,7 @@ void init(){
 			string DATA = get_data_from_file(strval.c_str());
 			string B64 = base64_encode((unsigned char*)DATA.c_str(),strlen(DATA.c_str()));
 			DX.insert_from(VERSION, "data", B64);
+			
 	
 			//SQLITE3
 			//string DATA = get_data_from_file(strval.c_str());
@@ -224,7 +226,39 @@ void add_all(string const VERSION, string COMMENT){
 	DX.save_database(tmp_str+".dictx");
 }
 
-
+void reload_version(string const VERSION){
+	/* INIT VARS BASE */
+	string nom_dossier;
+	nom_dossier = get_current_path();
+	cout << "\nCurrent path: " << nom_dossier << endl;
+	list<string> fichiers;
+	fichiers = get_files_names(nom_dossier);
+	string REQ;
+	
+	unsigned int Hip = hash(nom_dossier.c_str());
+	stringstream Hop;
+	Hop << Hip;
+	string tmp_str = Hop.str();
+	cout << "PROJECT:[" << tmp_str << "]" << endl;
+	DX.load_database(tmp_str+".dictx");
+	
+	map <int, string> SEA;
+	SEA = DX.search(VERSION,(string)"file");
+	DX.aff_search(VERSION,(string)"file");
+	map <int, string> SEADATA;
+	SEADATA = DX.search(VERSION,(string)"data");
+	map <int, string> SEACOM;
+	SEACOM = DX.search(VERSION,(string)"comment");
+	cout << "LOAD FILES..."<<endl;
+	for (map<int,string>::iterator it = SEA.begin(); it != SEA.end(); ++it){
+		cout << "FICHIER: " <<it -> first<<endl;
+		ofstream fichier;
+		fichier.open(it->second.c_str());
+		fichier << base64_decode(SEADATA[it->first]);
+		fichier.close();
+		cout << "COMMENT: " << SEACOM[it->first] << endl;
+	}
+}
 
 int main (int argc, char * const argv[]) {
 	///init();
@@ -243,10 +277,10 @@ int main (int argc, char * const argv[]) {
 			cout << "Usage: icv <command> <argument>" << endl << endl;
 			cout << "Command:" << endl;
 			cout << "init -- Init the project directory" << endl;
-			cout << "igniore <filename> -- Igniore a file" << endl;
+			//cout << "igniore <filename> -- Igniore a file" << endl;
 			cout << "add all <version> <comment> -- Save the version" << endl;
 			cout << "reload <version> -- fetch previous version" << endl;
-			cout << "revert -- cancel changes" << endl;
+			//cout << "revert -- cancel changes" << endl;
 			return 1;
 		}
 		if (string(argv[1]) == "init"){
@@ -259,6 +293,11 @@ int main (int argc, char * const argv[]) {
 			if (string(argv[2]) == "all"){
 				add_all(argv[3],argv[4]);			
 			}
+		}
+	}
+	if (argc==3){
+		if (string(argv[1]) == "reload"){
+			reload_version(argv[2]);
 		}
 	}
 	/*if (argc > 3){

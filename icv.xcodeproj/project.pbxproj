@@ -15,8 +15,6 @@
 		F1AD91AD20D659B1002DD83A /* base64.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F1AD91AB20D659B1002DD83A /* base64.h */; };
 		F1C02A7920D5076200D0DB95 /* dictx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1C02A7520D5076200D0DB95 /* dictx.cpp */; };
 		F1C02A7A20D5076200D0DB95 /* dictx.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F1C02A7620D5076200D0DB95 /* dictx.h */; };
-		F1C02A7B20D5076200D0DB95 /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = F1C02A7720D5076200D0DB95 /* sqlite3.c */; };
-		F1C02A7C20D5076200D0DB95 /* sqlite3.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F1C02A7820D5076200D0DB95 /* sqlite3.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,7 +26,6 @@
 			files = (
 				8DD76F6A0486A84900D96B5E /* icv.1 in CopyFiles */,
 				F1C02A7A20D5076200D0DB95 /* dictx.h in CopyFiles */,
-				F1C02A7C20D5076200D0DB95 /* sqlite3.h in CopyFiles */,
 				F1AD917220D6498C002DD83A /* md5.h in CopyFiles */,
 				F1AD91AD20D659B1002DD83A /* base64.h in CopyFiles */,
 			);
@@ -46,8 +43,6 @@
 		F1AD91AB20D659B1002DD83A /* base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base64.h; sourceTree = "<group>"; };
 		F1C02A7520D5076200D0DB95 /* dictx.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dictx.cpp; sourceTree = "<group>"; };
 		F1C02A7620D5076200D0DB95 /* dictx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dictx.h; sourceTree = "<group>"; };
-		F1C02A7720D5076200D0DB95 /* sqlite3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sqlite3.c; sourceTree = "<group>"; };
-		F1C02A7820D5076200D0DB95 /* sqlite3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,8 +65,6 @@
 				F1AD917020D6498C002DD83A /* md5.h */,
 				F1C02A7520D5076200D0DB95 /* dictx.cpp */,
 				F1C02A7620D5076200D0DB95 /* dictx.h */,
-				F1C02A7720D5076200D0DB95 /* sqlite3.c */,
-				F1C02A7820D5076200D0DB95 /* sqlite3.h */,
 				08FB7795FE84155DC02AAC07 /* Source */,
 				C6859E8C029090F304C91782 /* Documentation */,
 				1AB674ADFE9D54B511CA2CBB /* Products */,
@@ -146,7 +139,6 @@
 			files = (
 				8DD76F650486A84900D96B5E /* main.cpp in Sources */,
 				F1C02A7920D5076200D0DB95 /* dictx.cpp in Sources */,
-				F1C02A7B20D5076200D0DB95 /* sqlite3.c in Sources */,
 				F1AD917120D6498C002DD83A /* md5.cpp in Sources */,
 				F1AD91AC20D659B1002DD83A /* base64.cpp in Sources */,
 			);

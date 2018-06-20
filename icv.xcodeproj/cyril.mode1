@@ -190,7 +190,7 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>F1F7995D20D9276400A43FFB</string>
+				<string>F1B801F720D98FE400578024</string>
 				<key>PBXProjectModuleLabel</key>
 				<string>main.cpp</string>
 				<key>PBXSplitModuleInNavigatorKey</key>
@@ -198,56 +198,21 @@
 					<key>Split0</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
-						<string>F1F7995E20D9276400A43FFB</string>
+						<string>F1B8020520D99EB000578024</string>
 						<key>PBXProjectModuleLabel</key>
 						<string>main.cpp</string>
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>F1B8011920D954D100578024</string>
+						<string>F1B8023720D9A9C700578024</string>
 						<key>history</key>
 						<array>
-							<string>F1B8011820D954D100578024</string>
+							<string>F1B8023220D9A48F00578024</string>
+							<string>F1B8022D20D9A47700578024</string>
 						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {748, 432}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>44 105 748 473 0 0 800 578 </string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
-				<string>F1B800F620D94DF200578024</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>dictx.cpp</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>F1B800F720D94DF200578024</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>dictx.cpp</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>F1B8011A20D954D100578024</string>
-						<key>history</key>
+						<key>prevStack</key>
 						<array>
-							<string>F1B800F120D94D2B00578024</string>
+							<string>F1B8023320D9A48F00578024</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -447,9 +412,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>F1B800C520D94B7D00578024</string>
+				<string>F1B8023020D9A48F00578024</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>F1B800C620D94B7D00578024</string>
+				<string>F1B8023120D9A48F00578024</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -561,6 +526,8 @@
 	</array>
 	<key>PerspectivesBarVisible</key>
 	<false/>
+	<key>PinnedNavigatorIdentifier</key>
+	<string>F1B801F720D98FE400578024</string>
 	<key>ShelfIsVisible</key>
 	<false/>
 	<key>SourceDescription</key>
@@ -583,16 +550,8 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>F1B800EA20D94C5D00578024</string>
-		<string>F1B800EB20D94C5D00578024</string>
-		<string>F171757920D7E57B003A01A6</string>
-		<string>1CD10A99069EF8BA00B06720</string>
-		<string>F1B800E720D94C4100578024</string>
-		<string>F1C02A0F20D4FF1900D0DB95</string>
-		<string>F1B800F620D94DF200578024</string>
-		<string>/Users/cyril/icv/icv.xcodeproj</string>
-		<string>F1F7995D20D9276400A43FFB</string>
 		<string>1C0AD2B3069F1EA900FABCE6</string>
+		<string>/Users/cyril/icv/icv.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>29 162 690 397 0 0 800 578 </string>
@@ -616,7 +575,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>&lt;No Editor&gt;</string>
+								<string>base64.cpp</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -674,7 +633,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>F1C02A0F20D4FF1900D0DB95</string>
-				<string>F1B800C920D94B7D00578024</string>
+				<string>F1B801AC20D986AE00578024</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -685,7 +644,7 @@
 			<key>WindowToolGUID</key>
 			<string>F1C02A0F20D4FF1900D0DB95</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
@@ -716,8 +675,8 @@
 										<string>yes</string>
 										<key>sizes</key>
 										<array>
-											<string>{{0, 0}, {310, 200}}</string>
-											<string>{{310, 0}, {384, 200}}</string>
+											<string>{{0, 0}, {309, 200}}</string>
+											<string>{{309, 0}, {385, 200}}</string>
 										</array>
 									</dict>
 									<key>VerticalSplitView</key>
@@ -780,14 +739,14 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>F1B800E120D94C4100578024</string>
+				<string>F1B801EC20D98FAF00578024</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>F1B800E220D94C4100578024</string>
-				<string>F1B800E320D94C4100578024</string>
-				<string>F1B800E420D94C4100578024</string>
-				<string>F1B800E520D94C4100578024</string>
-				<string>F1B800E620D94C4100578024</string>
-				<string>F1B800E720D94C4100578024</string>
+				<string>F1B801ED20D98FAF00578024</string>
+				<string>F1B801EE20D98FAF00578024</string>
+				<string>F1B801EF20D98FAF00578024</string>
+				<string>F1B801F020D98FAF00578024</string>
+				<string>F1B801F120D98FAF00578024</string>
+				<string>F1B801F220D98FAF00578024</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debug</string>
@@ -1021,7 +980,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {498, 328}}</string>
 								<key>RubberWindowFrame</key>
-								<string>3 135 498 369 0 0 800 578 </string>
+								<string>3 134 498 369 0 0 800 578 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXRunSessionModule</string>
@@ -1044,18 +1003,18 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C0AD2B3069F1EA900FABCE6</string>
-				<string>F1B800CA20D94B7D00578024</string>
+				<string>F1B8022B20D9A47300578024</string>
 				<string>1CD0528B0623707200166675</string>
-				<string>F1B800CB20D94B7D00578024</string>
+				<string>F1B8022C20D9A47300578024</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.run</string>
 			<key>WindowString</key>
-			<string>3 135 498 369 0 0 800 578 </string>
+			<string>3 134 498 369 0 0 800 578 </string>
 			<key>WindowToolGUID</key>
 			<string>1C0AD2B3069F1EA900FABCE6</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Identifier</key>
